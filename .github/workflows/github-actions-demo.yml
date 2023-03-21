@@ -22,5 +22,5 @@ jobs:
     steps:
       - run: echo "Event ${{ github.event_name }}"
       - uses: actions/checkout@v1
-      - run: echo "Event ${{ github. }}"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ."
       - run: ls -R
