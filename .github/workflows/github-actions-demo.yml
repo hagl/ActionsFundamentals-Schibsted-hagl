@@ -24,3 +24,13 @@ jobs:
       - uses: actions/checkout@v1
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ."
       - run: ls -R
+  
+  share-output:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Set the date
+      id: date
+      run: | 
+        echo "date=${{date}}" >> GITHUB_OUTPUT
+    - name: Print
+      run: echo "Date: ${{ steps.date.outputs.date }}"
