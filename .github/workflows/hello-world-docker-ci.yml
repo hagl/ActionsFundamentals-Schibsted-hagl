@@ -1,0 +1,22 @@
+name: Hello Docker
+on:
+  push:
+    branches: main
+    paths: "hello-world-docker-action/**"
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Event ${{ github.event_name }}"
+      - uses: actions/checkout@v1
+      - name: docker action
+        id: hello
+        uses: ./hello-world-docker-action
+        with:
+          who-to-greet: abc
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
