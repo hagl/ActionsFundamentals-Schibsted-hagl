@@ -1,0 +1,21 @@
+name: GitHub Actions Demo
+on: 
+  push:
+    branches: main
+    paths-ignore: '.github/**'
+      
+  pull_request:
+    branches: 
+    - main
+  schedule:
+    - cron: "15 06 * * 0"
+    
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Event ${{ github.event_name }}"
+      - uses: actions/checkout@v1
+      - run: echo "Event ${{ github. }}"
+      - run: ls -R
