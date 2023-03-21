@@ -9,7 +9,10 @@ on:
     - main
   schedule:
     - cron: "15 06 * * 0"
-  workflow_run:
+
+  workflow_dispatch:
+    
+
     
     
 jobs:
