@@ -33,4 +33,5 @@ jobs:
       run: | 
         echo "date=${{date}}" >> GITHUB_OUTPUT
     - name: Print
-      run: echo "Date: ${{ steps.date.outputs.date }}"
+      run: | 
+        echo "Date: ${{ steps.date.outputs.date }}"
