@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: print greeting time
         run: |
-          echo "Hello ${{ jobs.call-workflow.output.current-time }}"
+          echo "Hello ${{ needs.call-workflow.outputs.current-time }}"
